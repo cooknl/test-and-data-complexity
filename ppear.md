@@ -25,7 +25,7 @@ The test process is in many ways analogous to Systems Engineering. Test Engineer
 
 Often these steps are seen as a simple sequence.
 
-``` mermaid
+```{mermaid}
 flowchart LR
     Plan --> Execute
     Execute --> Report
@@ -37,7 +37,7 @@ However, a plan is only a concept, and execution requires some preparation. Also
 
 By inserting two more steps, a complete set emerges.
 
-``` mermaid
+```{mermaid}
 flowchart LR
     Plan --> Provision
     Provision --> Execute
@@ -116,38 +116,45 @@ That all sounds simple enough, but the figure below shows that the Test Process 
 
 Every aspect of PPEAR literally affects every other, and as one moves through the process, revelations occur almost constantly that drive forward and backward updates and iterations.
 
-``` mermaid
+```{mermaid}
+---
+title: "Interactions Between Process Components"
+---
+%%{init: {"flowchart": {"htmlLabels": false}} }%%
 flowchart LR
-    Plan[Plan 
-    Requirements]
-    Provision[Provision
-    Resources]
-    Execute[Execute
-    Runs]
-    Analyze[Analyze
-    Results]
-    Report[Report
-    Recommendations]
-    Plan --> Provision 
-    Plan --> Execute
-    Plan --> Analyze
-    Plan --> Report
-    Provision --> Execute
-    Provision --> Analyze
-    Provision --> Report
-    Provision -.-> Plan
-    Execute --> Analyze
-    Execute --> Report
-    Execute -.-> Provision
-    Execute -.-> Plan
-    Analyze --> Report
-    Analyze -.-> Execute
-    Analyze -.-> Provision
-    Analyze -.-> Plan
-    Report -.-> Analyze
-    Report -.-> Execute
-    Report -.-> Provision
-    Report -.-> Plan
+    subgraph Constraints
+        direction LR
+        Plan["`**Plan**
+        *Requirements*`"]
+        Provision["`**Provision**
+        *Resources*`"]
+        Execute["`**Execute**
+        *Runs*`"]
+        Analyze["`**Analyze**
+        *Results*`"]
+        Report["`**Report**
+        *Recommendations*`"]
+        Plan --> Provision 
+        Plan --> Execute
+        Plan --> Analyze
+        Plan --> Report
+        Provision --> Execute
+        Provision --> Analyze
+        Provision --> Report
+        Provision -.-> Plan
+        Execute --> Analyze
+        Execute --> Report
+        Execute -.-> Provision
+        Execute -.-> Plan
+        Analyze --> Report
+        Analyze -.-> Execute
+        Analyze -.-> Provision
+        Analyze -.-> Plan
+        Report -.-> Analyze
+        Report -.-> Execute
+        Report -.-> Provision
+        Report -.-> Plan
+    end
 ```
 
 ## Sequences
@@ -158,19 +165,40 @@ On the timeline are sets of sequences.
 
 A Sequence is a thing bound in time with a beginning, a middle, and an end, bracketed with a start time and an end time.
 
+```{mermaid}
+---
+title: Sequences have a Beginning, a Middle, and an End Bounded by a Start Time and an End Time
+---
+flowchart LR
+    start(["Start Time"]) --> Beginning --> Middle --> End --> stop(["Stop Time"])
+
+```
+
 There are sequences at multiple nested layers, as well.
 
 ![Sequences](test-sequences-graphic.png)
 
+### Run
+
 The smallest sequence is a Run, from the Execution step. The Run's beginning is called Setup, its middle is Procedure, and its End is Recovery.
+
+### Mission
 
 The next level of Sequence is a Mission. A Mission consists of one or more Runs, which could be executed in serial and/or parallel. The Mission's beginning is called Brief, its middle is called Test, and its End is Debrief.
 
+### Campaign
+
 The next level is Campaign. A Campaign consists of one or more Missions, serial and/or parallel. The Campaign's beginning is called ???, its middle is ???, and its End is ???.
+
+### Project
 
 The next level is Project. A Project consists of one or more Campaigns, serial and/or parallel. The Project's beginning is called ???, its middle is ???, and its End is ???.
 
+### Program
+
 The next level is Program. A Program consists of one or more Projects, serial and/or parallel. The Program's beginning is called ???, its middle is ???, and its end is ???.
+
+### Portfolio
 
 The next level is Portfolio. A Portfolio consists of one or more Programs, serial and/or parallel. The Portfolio's beginning is called ???, its middle is ???, and its end is ???.
 

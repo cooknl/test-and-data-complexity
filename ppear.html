@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.2.313">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>ppear</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="ppear_files/libs/clipboard/clipboard.min.js"></script>
+<script src="ppear_files/libs/quarto-html/quarto.js"></script>
+<script src="ppear_files/libs/quarto-html/popper.min.js"></script>
+<script src="ppear_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="ppear_files/libs/quarto-html/anchor.min.js"></script>
+<link href="ppear_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="ppear_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="ppear_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="ppear_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="ppear_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+
+
+<section id="ppear-aka-the-test-process" class="level1">
+<h1>PPEAR aka The Test Process</h1>
+<section id="the-systems-engineering-v" class="level2">
+<h2 class="anchored" data-anchor-id="the-systems-engineering-v">The Systems Engineering “V”</h2>
+<p><img src="veediagram.jpg" class="img-fluid" alt="The Systems Engineering “V”"> <em>The Systems Engineering “V”</em></p>
+<p>The Systems Engineering “V” is very powerful. It provides a framework for system design-build-test that has enabled space travel.</p>
+<p>However, the “V” itself is deceptively simple, and implies a linear sequence of phases, all moving forward in time.</p>
+<p>This diagram includes a set of “Cross-Cutting Activities,” as well, that occur regardless of phase or level of detail. The “V” provides no insight into how to manage those cross-cutting activities.</p>
+</section>
+<section id="the-test-process" class="level2">
+<h2 class="anchored" data-anchor-id="the-test-process">The Test Process</h2>
+<p>The test process is in many ways analogous to Systems Engineering. Test Engineering can be seen as a design discipline, in which a test is designed.</p>
+<section id="per" class="level3">
+<h3 class="anchored" data-anchor-id="per">PER</h3>
+<table class="table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Systems Engineering</th>
+<th>Test Engineering</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Decomposition and Definition - Requirements</td>
+<td>Plan: Objectives and Measures of Performance</td>
+</tr>
+<tr class="even">
+<td>Develop and Implement - Software Coding and Hardware Fabrication</td>
+<td>Execute: Conduct Test</td>
+</tr>
+<tr class="odd">
+<td>Integration and Recomposition - Verification</td>
+<td>Report: Results and Recommendations</td>
+</tr>
+</tbody>
+</table>
+<p>Often these steps are seen as a simple sequence.</p>
+<pre class="mermaid"><code>flowchart LR
+    Plan --&gt; Execute
+    Execute --&gt; Report</code></pre>
+<p>However, a plan is only a concept, and execution requires some preparation. Also, execution generates data, but data alone isn’t sufficient for reporting.</p>
+</section>
+</section>
+<section id="ppear" class="level2">
+<h2 class="anchored" data-anchor-id="ppear">PPEAR</h2>
+<p>By inserting two more steps, a complete set emerges.</p>
+<pre class="mermaid"><code>flowchart LR
+    Plan --&gt; Provision
+    Provision --&gt; Execute
+    Execute --&gt; Analyze
+    Analyze --&gt; Report</code></pre>
+<section id="plan" class="level3">
+<h3 class="anchored" data-anchor-id="plan">Plan</h3>
+<p>Planning is the activity that takes hypotheses and system requirements and translates them into test requirements.</p>
+<p><img src="Test%20and%20Data%20Management%20Complexity-Page-2.png" class="img-fluid" alt="Plan"> <em>Plan Translates Test Objectives into Test Points</em></p>
+<p>The fundamental unit of test planning is a Test Point.</p>
+<p>A Test Point is the unique combination of Test Methodology and Test Condition that generates the data required to satisfy test objectives.</p>
+</section>
+<section id="provision" class="level3">
+<h3 class="anchored" data-anchor-id="provision">Provision</h3>
+<p>Provisioning is the activity that takes test requirements and translates them into test resources necessary and sufficient to execute test.</p>
+<p><img src="Test%20and%20Data%20Management%20Complexity-Provision.png" class="img-fluid" alt="Provision"> <em>Provision Translates Test Requirements into Test Resources</em></p>
+<p>The fundamental unit of test provisioning is a Test Card.</p>
+<p>A Test Card is the unique combination of Test Point(s), Test Resources (People/Places/Things/Communication), and executable steps for Setup/Procedure/Recovery.</p>
+</section>
+<section id="execute" class="level3">
+<h3 class="anchored" data-anchor-id="execute">Execute</h3>
+<p>Execution is the activity that takes test cards and translates them into test runs executed on a timeline.</p>
+<p><em>Execution Figure Still WIP</em></p>
+<p>The fundamental unit of test execution is a Test Run.</p>
+<p>A Test Run is the unique combination of start time, end time, attempted Test Card, actual Test Team, and the Test Dataset associated with the execution.</p>
+</section>
+<section id="analyze" class="level3">
+<h3 class="anchored" data-anchor-id="analyze">Analyze</h3>
+<p>Analysis is the activity that takes test runs and translates them into test results.</p>
+<p><em>Analysis Figure Still WIP</em></p>
+<p>The fundamental unit of test analysis is a Test Result.</p>
+<p>A Test Result is the unique combination of narrative, data product(s), and context that answers a particular question.</p>
+</section>
+<section id="report" class="level3">
+<h3 class="anchored" data-anchor-id="report">Report</h3>
+<p>Reporting is the activity that takes test results and translates them into recommendations for action.</p>
+<p>*Reporting Figure Still WIP”</p>
+<p>The fundamental unit of test reporting is a Test Recommendation.</p>
+<p>A Test Recommendation is the unique combination of test result, mission impact, professional assessment, and timing.</p>
+</section>
+</section>
+<section id="constraints" class="level2">
+<h2 class="anchored" data-anchor-id="constraints">Constraints</h2>
+<p>Constraints are the bounds of action and possibility.</p>
+<p><img src="Test%20and%20Data%20Management%20Complexity-Constraints.png" class="img-fluid" alt="Constraints"> <em>Constraints are the Boundaries Within Which Test Occurs</em></p>
+<p>Constraints can be mapped to the classic “Safe, Secure, Effective, Efficient.”</p>
+<p>Constraints can be expressed in multiple formats.</p>
+<p>Not all constraints are created equal.</p>
+</section>
+<section id="complexity" class="level2">
+<h2 class="anchored" data-anchor-id="complexity">Complexity</h2>
+<p>That all sounds simple enough, but the figure below shows that the Test Process is not as simple as a 5-step linear progression in time.</p>
+<p>Every aspect of PPEAR literally affects every other, and as one moves through the process, revelations occur almost constantly that drive forward and backward updates and iterations.</p>
+<pre class="mermaid"><code>flowchart LR
+    Plan[Plan 
+    Requirements]
+    Provision[Provision
+    Resources]
+    Execute[Execute
+    Runs]
+    Analyze[Analyze
+    Results]
+    Report[Report
+    Recommendations]
+    Plan --&gt; Provision 
+    Plan --&gt; Execute
+    Plan --&gt; Analyze
+    Plan --&gt; Report
+    Provision --&gt; Execute
+    Provision --&gt; Analyze
+    Provision --&gt; Report
+    Provision -.-&gt; Plan
+    Execute --&gt; Analyze
+    Execute --&gt; Report
+    Execute -.-&gt; Provision
+    Execute -.-&gt; Plan
+    Analyze --&gt; Report
+    Analyze -.-&gt; Execute
+    Analyze -.-&gt; Provision
+    Analyze -.-&gt; Plan
+    Report -.-&gt; Analyze
+    Report -.-&gt; Execute
+    Report -.-&gt; Provision
+    Report -.-&gt; Plan</code></pre>
+</section>
+<section id="sequences" class="level2">
+<h2 class="anchored" data-anchor-id="sequences">Sequences</h2>
+<p>Adding to the complexity of the Test Process is that the web of relationships and entities that is PPEAR must get iteratively mapped to a timeline.</p>
+<p>On the timeline are sets of sequences.</p>
+<p>A Sequence is a thing bound in time with a beginning, a middle, and an end, bracketed with a start time and an end time.</p>
+<p>There are sequences at multiple nested layers, as well.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="test-sequences-graphic.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Sequences</figcaption><p></p>
+</figure>
+</div>
+<p>The smallest sequence is a Run, from the Execution step. The Run’s beginning is called Setup, its middle is Procedure, and its End is Recovery.</p>
+<p>The next level of Sequence is a Mission. A Mission consists of one or more Runs, which could be executed in serial and/or parallel. The Mission’s beginning is called Brief, its middle is called Test, and its End is Debrief.</p>
+<p>The next level is Campaign. A Campaign consists of one or more Missions, serial and/or parallel. The Campaign’s beginning is called ???, its middle is ???, and its End is ???.</p>
+<p>The next level is Project. A Project consists of one or more Campaigns, serial and/or parallel. The Project’s beginning is called ???, its middle is ???, and its End is ???.</p>
+<p>The next level is Program. A Program consists of one or more Projects, serial and/or parallel. The Program’s beginning is called ???, its middle is ???, and its end is ???.</p>
+<p>The next level is Portfolio. A Portfolio consists of one or more Programs, serial and/or parallel. The Portfolio’s beginning is called ???, its middle is ???, and its end is ???.</p>
+<p>The next level is ???….</p>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>
